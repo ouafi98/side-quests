@@ -11,8 +11,6 @@ project:
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
 site:
   template: book-theme
-  options:
-    BASE_URL: ''
   # options:
   #   favicon: favicon.ico
   #   logo: site_logo.png
