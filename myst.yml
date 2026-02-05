@@ -12,7 +12,7 @@ project:
 site:
   template: book-theme
   options:
-    base_url: side-quests.fr
+    base_url: side-quests
   # options:
   #   favicon: favicon.ico
   #   logo: site_logo.png
