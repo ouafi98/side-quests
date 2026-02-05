@@ -1,0 +1,16 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: b5a6afa4-0b56-4583-800f-6d1d01bd299a
+  title: Side Quests
+  # description: A collections of notes and explorations
+  # keywords: []
+  authors: 
+  - name: Mandela OUAFO
+  # github:
+  # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
+site:
+  template: book-theme
+  # options:
+  #   favicon: favicon.ico
+  #   logo: site_logo.png
