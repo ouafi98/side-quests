@@ -3,6 +3,7 @@ version: 1
 project:
   id: b5a6afa4-0b56-4583-800f-6d1d01bd299a
   # title: Side Quests
+  github: https://github.com/ouafi98/side-quests
   toc:
     - file: 000-intro.md
     - title: Notes
@@ -20,6 +21,7 @@ project:
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
 site:
   template: book-theme
-  # options:
+  options:
+    scripts: https://buttons.github.io/buttons.js
   #   favicon: favicon.ico
   #   logo: site_logo.png
