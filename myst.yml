@@ -8,10 +8,13 @@ project:
     - file: 000-intro.md
     - title: Notes
       children:
-        - title: Measure Theory
+        - title: Measure Theory Adventure
           children:
-          - file: notes/mira/000-intro.md
-            title: Measure, Integration & Real Analysis
+              - file: notes/mira/000-intro.md
+                title: Measure, Integration & Real Analysis
+                children:
+                  - file: notes/mira/002-exercices.md
+    
 
   # description: A collections of notes and explorations
   # keywords: []
@@ -21,7 +24,6 @@ project:
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
 site:
   template: book-theme
-  options:
-    scripts: https://buttons.github.io/buttons.js
+  # options:
   #   favicon: favicon.ico
   #   logo: site_logo.png
