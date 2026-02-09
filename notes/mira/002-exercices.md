@@ -117,3 +117,106 @@ $$
 
 :::
 ::::
+
+::::{admonition} Exercise 2B.4
+:class: tip
+
+Suppose $\mathcal S$ is the smallest $\sigma$-algebra on $\mathbb R$ containing
+$\{(r,n] : r \in \mathbb Q,\ n \in \mathbb Z\}$.
+Prove that $\mathcal S$ is the collection of Borel subsets of $\mathbb R$.
+
+:::{dropdown} Solution
+
+We prove that $\mathcal S = \mathcal B(\mathbb R)$.
+
+---
+
+**Step 1.** $\mathcal S \subset \mathcal B(\mathbb R)$.
+
+Fix $r \in \mathbb Q$ and $n \in \mathbb Z$. Observe that
+
+$$
+(r,n] = \bigcap_{k=1}^{\infty} (r, n + 1/k).
+$$
+
+Each interval $(r,n+1/k)$ is open, hence belongs to $\mathcal B(\mathbb R)$.
+Because $\mathcal B(\mathbb R)$ is a $\sigma$-algebra, it follows that
+$(r,n] \in \mathcal B(\mathbb R)$.
+Since $\mathcal S$ is the smallest $\sigma$-algebra containing all such intervals,
+we conclude that
+
+$$
+\mathcal S \subset \mathcal B(\mathbb R).
+$$
+
+---
+
+**Step 2.** Construction of half-lines.
+
+We first consider the case $a > 0$.
+Using the sequences $s_n(a) \downarrow a$, we can write
+
+$$
+(a,+\infty)
+=
+\bigcup_{k=1}^{\infty}
+\ \bigcup_{n=1}^{\infty}
+(\, s_n(a), \, k \,].
+$$
+
+Each interval $(s_n(a),k]$ is of the form $(r,n]$ with rational and integer endpoints,
+hence belongs to $\mathcal S$. The remaining case $a < 0$ is shown using a similar argument. (see exercice 2B.3)
+
+Therefore $(a,+\infty) \in \mathcal S, \, \forall a \in \mathbb R$
+
+Next, observe that
+
+$$
+[a,+\infty)
+=
+\bigcap_{k=1}^{\infty} (a - 1/k,+\infty).
+$$
+
+Since $\mathcal S$ is a $\sigma$-algebra, it follows that $[a,+\infty) \in \mathcal S$.
+Taking complements, we obtain
+
+$$
+(-\infty,a) = \mathbb R \setminus [a,+\infty) \in \mathcal S.
+$$
+
+---
+
+**Step 3.** Construction of open intervals.
+
+Let $a < b$. Then
+
+$$
+(a,b) = (-\infty,b) \cap (a,+\infty).
+$$
+
+Since both $(-\infty,b)$ and $(a,+\infty)$ belong to $\mathcal S$, we conclude that
+$(a,b) \in \mathcal S$.
+
+Thus every open interval of $\mathbb R$ belongs to $\mathcal S$.
+
+---
+
+**Step 4.** Conclusion.
+
+Every open subset of $\mathbb R$ is a countable union of open intervals.
+Therefore every open set belongs to $\mathcal S$, which implies
+
+$$
+\mathcal B(\mathbb R) \subset \mathcal S.
+$$
+
+Combining this with Step 1 yields
+
+$$
+\mathcal S = \mathcal B(\mathbb R).
+$$
+
+∎
+
+:::
+::::
