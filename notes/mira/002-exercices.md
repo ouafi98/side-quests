@@ -12,7 +12,7 @@ Prove that $\mathcal S$ is the collection of Borel subsets of $\mathbb R$.
 :::{dropdown} Solution
 
 We prove that $\mathcal S = \mathcal B(\mathbb R)$, where $\mathcal B(\mathbb R)$ is the
-smallest $\sigma$-algebra on $\mathbb R$ containing all open subsets of $\mathbb R$ and it is called
+smallest $\sigma-algebra$ on $\mathbb R$ containing all open subsets of $\mathbb R$ and it is called
 the collection of Borel subsets of $\mathbb R$.
 
 ---
@@ -26,9 +26,9 @@ $$
 $$
 
 Each interval $(r, s + 1/k)$ is open, hence belongs to $\mathcal B(\mathbb R)$.
-Because $\mathcal B(\mathbb R)$ is a $\sigma$-algebra, it follows that
+Because $\mathcal B(\mathbb R)$ is a $\sigma-algebra$, it follows that
 $(r,s] \in \mathcal B(\mathbb R)$.
-Since $\mathcal S$ is the smallest $\sigma$-algebra containing all such intervals,
+Since $\mathcal S$ is the smallest $\sigma-algebra$ containing all such intervals,
 we conclude that
 
 $$
