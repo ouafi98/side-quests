@@ -220,3 +220,42 @@ $$
 
 :::
 ::::
+
+::::{admonition} Exercise 2B.7
+:class: tip
+
+Prove that the collection of Borel subsets of $\mathbb R$ is translation invariant.
+More precisely, prove that if $B \subset \mathbb R$ is a Borel set and $t \in \mathbb R$,
+then $t + B$ is a Borel subset of $\mathbb R$.
+
+:::{dropdown} Solution
+
+Let $B \subset \mathbb R$ be a Borel set and let $t \in \mathbb R$.
+Define the function $f : \mathbb R \to \mathbb R$ by
+
+$$
+f(x) = x - t.
+$$
+
+The function $f$ is continuous on $\mathbb R$, hence it is Borel measurable.
+Therefore, for every Borel set $B \subset \mathbb R$, the preimage $f^{-1}(B)$
+is a Borel subset of $\mathbb R$.
+
+Now observe that
+
+$$
+f^{-1}(B)
+=
+\{ x \in \mathbb R : f(x) \in B \}
+=
+\{ x \in \mathbb R : x - t \in B \}
+=
+t + B.
+$$
+
+Hence $t + B$ is a Borel subset of $\mathbb R$.
+
+∎
+
+:::
+::::
