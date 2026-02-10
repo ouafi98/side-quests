@@ -238,7 +238,7 @@ f(x) = x - t.
 $$
 
 The function $f$ is continuous on $\mathbb R$, hence it is Borel measurable.
-Therefore, for every Borel set $B \subset \mathbb R$, the preimage $f^{-1}(B)$
+Therefore, for every Borel set $B \subset \mathbb R$, the inverse image $f^{-1}(B)$
 is a Borel subset of $\mathbb R$.
 
 Now observe that
