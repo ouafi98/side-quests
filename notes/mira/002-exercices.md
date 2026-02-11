@@ -373,3 +373,149 @@ $\blacksquare$
 
 :::
 ::::
+
+::::{admonition} Exercise 2B.16
+:class: tip
+
+Suppose $(X,\mathcal S)$ is a measurable space and $A \in \mathcal S$.
+
+Define
+$$ \mathcal S_A = \{ E \in \mathcal S : A \subset E \text{ or } A \cap E = \varnothing \}. $$
+
+(a) Prove that $\mathcal S_A$ is a $\sigma$-algebra on $X$.
+
+(b) Prove that a function $f : X \to \mathbb R$ is $\mathcal S_A$-measurable
+if and only if $f$ is $\mathcal S$-measurable and $f$ is constant on $A$.
+
+:::{dropdown} Solution
+
+(a)  $\mathcal S_A$ is a $\sigma$-algebra.
+
+**Step 1.** $\varnothing, X \in \mathcal S_A$.
+
+- Since $A \cap \varnothing = \varnothing$, we have $\varnothing \in \mathcal S_A$.
+- Since $A \subset X$, we have $X \in \mathcal S_A$.
+
+---
+
+**Step 2.** Closed under complements.
+
+Let $E \in \mathcal S_A$.
+
+Then either $A \subset E$ or $A \cap E = \varnothing$.
+
+- If $A \subset E$, then $A \cap (X \setminus E) = \varnothing$,
+  hence $X \setminus E \in \mathcal S_A$.
+
+- If $A \cap E = \varnothing$, then $A \subset X \setminus E$,
+  hence $X \setminus E \in \mathcal S_A$.
+
+Thus $\mathcal S_A$ is closed under complements.
+
+---
+
+**Step 3.** Closed under countable unions.
+
+Let $(E_k)_{k\ge1}$ be a sequence of elements of $\mathcal S_A$.
+
+We consider two cases.
+
+- If there exists $k$ such that $A \subset E_k$, then
+  $A \subset \bigcup_{k=1}^\infty E_k$,
+  so the union belongs to $\mathcal S_A$.
+
+- Otherwise, for every $k$ we have $A \cap E_k = \varnothing$.
+  Then
+  $$ A \cap \left( \bigcup_{k=1}^\infty E_k \right) = \bigcup_{k=1}^\infty (A \cap E_k) = \varnothing, $$
+  so the union belongs to $\mathcal S_A$.
+
+Therefore $\mathcal S_A$ is a $\sigma$-algebra on $X$.
+
+---
+
+(b) Characterization of $\mathcal S_A$-measurable functions
+
+---
+
+($\Rightarrow$) Assume $f$ is $\mathcal S_A$-measurable.
+
+Since $\mathcal S_A \subset \mathcal S$, we have
+$f^{-1}((a,+\infty)) \in \mathcal S$ for every $a \in \mathbb R$.
+Hence $f$ is $\mathcal S$-measurable.
+
+Now suppose $f$ is not constant on $A$.
+Then there exist $a_1, a_2 \in A$ such that
+$$
+f(a_1) \ne f(a_2).
+$$
+
+Consider the Borel set $\{ f(a_1) \}$.
+Since $f$ is $\mathcal S_A$-measurable,
+$$
+f^{-1}(\{f(a_1)\}) \in \mathcal S_A.
+$$
+
+By definition of $\mathcal S_A$, either
+
+- $A \subset f^{-1}(\{f(a_1)\})$, or
+- $A \cap f^{-1}(\{f(a_1)\}) = \varnothing$.
+
+The second possibility is impossible because $a_1 \in A$
+and $f(a_1)$ belongs to that singleton.
+
+Hence
+$$
+A \subset f^{-1}(\{f(a_1)\}).
+$$
+
+This implies that for every $x \in A$,
+$$
+f(x) = f(a_1).
+$$
+
+In particular,
+$$
+f(a_2) = f(a_1),
+$$
+which contradicts the assumption that
+$f(a_1) \ne f(a_2)$.
+
+Therefore $f$ must be constant on $A$.
+
+---
+
+($\Leftarrow$) Assume $f$ is $\mathcal S$-measurable and constant on $A$.
+
+Let $f(x)=c$ for all $x \in A$.
+
+To prove $f$ is $\mathcal S_A$-measurable,
+it suffices to check that
+$$
+f^{-1}((a,+\infty)) \in \mathcal S_A
+\quad \text{for all } a \in \mathbb R.
+$$
+
+We distinguish two cases.
+
+- If $c < a$, then
+  $A \cap f^{-1}((a,+\infty)) = \varnothing$.
+  Since $f^{-1}((a,+\infty)) \in \mathcal S$,
+  it follows that it belongs to $\mathcal S_A$.
+
+- If $a \le c$, then
+  $A \subset f^{-1}((a,+\infty))$.
+  Since the set lies in $\mathcal S$,
+  it belongs to $\mathcal S_A$.
+
+Thus $f$ is $\mathcal S_A$-measurable.
+
+---
+
+Therefore, $f$ is $\mathcal S_A$-measurable
+if and only if $f$ is $\mathcal S$-measurable
+and $f$ is constant on $A$.
+
+$\blacksquare$
+
+:::
+::::
