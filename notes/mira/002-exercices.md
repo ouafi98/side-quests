@@ -113,7 +113,7 @@ $$
 \mathcal S = \mathcal B(\mathbb R).
 $$
 
-∎
+$\blacksquare$
 
 :::
 ::::
@@ -216,7 +216,7 @@ $$
 \mathcal S = \mathcal B(\mathbb R).
 $$
 
-∎
+$\blacksquare$
 
 :::
 ::::
@@ -255,7 +255,121 @@ $$
 
 Hence $t + B$ is a Borel subset of $\mathbb R$.
 
-∎
+$\blacksquare$
+
+:::
+::::
+
+::::{admonition} Exercise 2B.9
+:class: tip
+
+Give an example of a measurable space $(X,\mathcal S)$ and a function
+$f : X \to \mathbb R$ such that $|f|$ is $\mathcal S$-measurable but
+$f$ is not $\mathcal S$-measurable.
+
+:::{dropdown} Solution
+
+Define
+$\mathcal S = \{ A \cup B : A \subseteq [0,+\infty),\ B \in \{\varnothing,(-\infty,0)\} \}.$
+
+---
+
+**Step 1. $\mathcal S$ is a $\sigma$-algebra on $\mathbb R$**
+
+- $\varnothing = \varnothing \cup \varnothing \in \mathcal S$, and
+
+  $$
+  \mathbb R = (-\infty,0) \cup [0,+\infty) \in \mathcal S.
+  $$
+
+- Let $C \in \mathcal S$ with $C = A \cup B$, where
+  $A \subseteq [0,+\infty)$ and $B \in \{\varnothing,(-\infty,0)\}$.
+  Then
+
+  $$
+  \mathbb R \setminus C = (\mathbb R \setminus A) \cap (\mathbb R \setminus B).
+  $$
+
+  Since
+
+  $$
+  \mathbb R \setminus A
+  =
+  (-\infty,0) \cup ([0,+\infty)\setminus A),
+  $$
+
+  and
+
+  $$
+  \mathbb R \setminus B =
+  \begin{cases}
+  \mathbb R & \text{if } B=\varnothing,\\
+  [0,+\infty) & \text{if } B=(-\infty,0),
+  \end{cases}
+  $$
+
+  it follows that $\mathbb R \setminus C$ is again of the form $A' \cup B'$ with
+  $A' \subseteq [0,+\infty)$ and
+  $B' \in \{\varnothing,(-\infty,0)\}$.
+  Hence $\mathbb R \setminus C \in \mathcal S$.
+
+- Let $(C_k)_{k\ge1}$ be a sequence of elements of $\mathcal S$ with
+  $C_k = A_k \cup B_k$.
+  Then
+
+  $$
+  \bigcup_{k=1}^\infty C_k
+  =
+  \left( \bigcup_{k=1}^\infty A_k \right)
+  \cup
+  \left( \bigcup_{k=1}^\infty B_k \right).
+  $$
+
+  Since $A_k \subseteq [0,+\infty)$ for all $k$ and
+  $\bigcup_k B_k \in \{\varnothing,(-\infty,0)\}$,
+  we have $\bigcup_k C_k \in \mathcal S$.
+
+Therefore, $\mathcal S$ is a $\sigma$-algebra on $\mathbb R$.
+
+---
+
+**Step 2. Definition of the function.**
+
+Define $f : \mathbb R \to \mathbb R$ by
+$$
+f(x)=
+\begin{cases}
+-1 & \text{if } x \le -1,\\
+1 & \text{if } x > -1.
+\end{cases}
+$$
+
+---
+
+**Step 3. $f$ is not $\mathcal S$-measurable.**
+
+Consider the Borel set $\{1\} \subset \mathbb R$. Then
+
+$$
+f^{-1}(\{1\}) = (-1,+\infty).
+$$
+
+This set contains some negative values but not all of $(-\infty,0)$.
+By definition of $\mathcal S$, such a set does not belong to $\mathcal S$.
+Hence $f$ is not $\mathcal S$-measurable.
+
+---
+
+**Step 4. $|f|$ is $\mathcal S$-measurable.**
+
+For all $x \in \mathbb R$, $|f(x)| = 1$.
+Thus $|f|$ is constant, and therefore $\mathcal S$-measurable.
+
+---
+
+Hence $|f|$ is $\mathcal S$-measurable but $f$ is not.
+
+$\blacksquare$
 
 :::
 ::::
