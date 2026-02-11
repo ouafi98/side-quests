@@ -519,3 +519,117 @@ $\blacksquare$
 
 :::
 ::::
+
+::::{admonition} Exercise 2B.17
+:class: tip
+
+Suppose $X$ is a Borel subset of $\mathbb R$ and $f : X \to \mathbb R$ is a function such that
+$$
+\{x \in X : f \text{ is not continuous at } x\}
+$$
+is a countable set. Prove $f$ is a Borel measurable function.
+
+:::{dropdown} Solution
+
+Let
+$$
+A = \{x \in X : f \text{ is not continuous at } x\}.
+$$
+By hypothesis, $A$ is countable.
+
+To prove that $f$ is Borel measurable, it suffices to show that
+for every $a \in \mathbb R$,
+$$
+f^{-1}((a,+\infty))
+$$
+is a Borel set.
+
+Fix $a \in \mathbb R$.
+
+We decompose
+$$ f^{-1}((a,+\infty)) = \big(f^{-1}((a,+\infty)) \setminus A\big) \cup \big(f^{-1}((a,+\infty)) \cap A\big). $$
+
+---
+
+**Step 1. The part outside the discontinuities**
+
+Let
+$$
+E = f^{-1}((a,+\infty)) \setminus A.
+$$
+
+If $x \in E$, then $x$ is a point of continuity of $f$
+and $f(x) > a$.
+
+By continuity at $x$, there exists $\delta_x > 0$ such that
+for all
+$$
+y \in (x-\delta_x, x+\delta_x) \cap X,
+$$
+we have
+$$
+f(y) > a.
+$$
+
+Hence
+$$
+(x-\delta_x, x+\delta_x) \cap X
+\subset
+E.
+$$
+
+Therefore,
+$$
+E=\left(\bigcup_{x \in E} (x-\delta_x, x+\delta_x) \right) \cap X.
+$$
+
+The union of open intervals is an open subset of $\mathbb R$.
+Since $X$ is Borel, the intersection of an open set with $X$
+is Borel.
+
+Thus $E$ is a Borel set.
+
+**Step 2. The part inside the discontinuities**
+
+Now consider
+$$
+f^{-1}((a,+\infty)) \cap A.
+$$
+
+Since this set is contained in $A$ and $A$ is countable,
+it is countable.
+Every countable subset of $\mathbb R$ is Borel.
+
+Hence this set is Borel.
+
+---
+
+**Step 3. Conclusion**
+
+We have written
+$$
+f^{-1}((a,+\infty)) = E \cup \big(f^{-1}((a,+\infty)) \cap A\big),
+$$
+as a union of two Borel sets.
+
+Therefore
+$f^{-1}((a,+\infty))$ is Borel.
+
+Since this holds for every $a \in \mathbb R$,
+$f$ is Borel measurable.
+
+$\blacksquare$
+
+:::
+::::
+
+::::{admonition} Exercise 2B.18
+:class: tip
+
+Suppose $f : \mathbb R \to \mathbb R$ is differentiable at every element of $\mathbb R$. Prove the $f'$ is 
+a Borel measurable function from $\mathbb R$ to $\mathbb R$.
+
+:::{dropdown} Solution
+in progess :)
+:::
+::::
