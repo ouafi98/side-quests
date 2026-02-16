@@ -711,7 +711,7 @@ $\blacksquare$
 :::
 ::::
 
-::::{admonition} Exercise 20
+::::{admonition} Exercise 2B.20
 :class: tip
 
 Suppose $(X,S)$ is measurable space and $f,g : X \to \mathbb R$ are $S$-measurable functions.  
@@ -792,7 +792,7 @@ $\blacksquare$
 :::
 ::::
 
-::::{admonition} Exercise 22
+::::{admonition} Exercise 2B.22
 :class: tip
 
 Suppose $B \subset \mathbb R$ and $f : B \to \mathbb R$ an increasing function.  
