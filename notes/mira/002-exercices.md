@@ -630,6 +630,280 @@ Suppose $f : \mathbb R \to \mathbb R$ is differentiable at every element of $\ma
 a Borel measurable function from $\mathbb R$ to $\mathbb R$.
 
 :::{dropdown} Solution
-in progess :)
+
+For each $n \in \mathbb N\, , n\geq 1$, define
+$$
+q_n(x) = \frac{f\!\left(x+\frac{1}{n}\right)-f(x)}{\frac{1}{n}} = n\Bigl(f\!\left(x+\tfrac{1}{n}\right)-f(x)\Bigr), \qquad x \in \mathbb R.
+$$
+
+---
+
+**Step 1. Each $q_n$ is continuous**
+
+Since $f$ is differentiable everywhere, it is continuous everywhere.
+Hence the functions
+$$
+x \mapsto f\!\left(x+\tfrac{1}{n}\right)
+\quad \text{and} \quad
+x \mapsto f(x)
+$$
+are continuous.
+
+Their difference is continuous, and multiplication by the constant $n$
+preserves continuity.
+Therefore each $q_n$ is continuous on $\mathbb R$.
+
+In particular, each $q_n$ is Borel measurable.
+
+---
+
+**Step 2. Pointwise convergence to $f'$**
+
+Fix $x \in \mathbb R$.
+
+Because $f$ is differentiable at $x$, the limit
+$$
+f'(x) = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h}
+$$
+exists.
+
+A basic property of limits in $\mathbb R$ states:
+
+If $\lim_{h\to 0} g(h)=L$, then for every sequence
+$h_n \to 0$ with $h_n \neq 0$,
+$$
+\lim_{n\to\infty} g(h_n)=L.
+$$
+
+Apply this to
+$$
+g(h)=\frac{f(x+h)-f(x)}{h}.
+$$
+
+Choosing $h_n=\frac{1}{n}$,
+we obtain
+$$
+\lim_{n\to\infty} \frac{f\!\left(x+\frac{1}{n}\right)-f(x)}{\frac{1}{n}} = f'(x).
+$$
+
+Hence
+$$
+f'(x)=\lim_{n\to\infty} q_n(x)
+\quad \text{for every } x \in \mathbb R.
+$$
+
+Thus $f'$ is the pointwise limit of the sequence $(q_n)_{n\ge1}$.
+
+---
+
+**Step 3. Measurability of the limit**
+
+A pointwise limit of Borel measurable functions is Borel measurable.
+
+Since each $q_n$ is Borel measurable and
+$$
+f'(x)=\lim_{n\to\infty} q_n(x),
+$$
+it follows that $f'$ is Borel measurable.
+
+$\blacksquare$
+
 :::
 ::::
+
+::::{admonition} Exercise 20
+:class: tip
+
+Suppose $(X,S)$ is measurable space and $f,g : X \to \mathbb R$ are $S$-measurable functions.  
+Prove that if $f(x)>0$ for all $x\in X$, then $f^g$ (which is the function whose value at $x\in X$ is $f(x)^{g(x)}$) is an $S$-measurable function.
+
+
+:::{dropdown} Solution
+
+Since $f(x)>0$ for all $x$, the logarithm $\ln(f(x))$ is well-defined.
+
+We rewrite
+$$
+f(x)^{g(x)} = \exp\!\big(g(x)\,\ln(f(x))\big).
+$$
+
+---
+
+**Step 1. Measurability of $\ln(f)$**
+
+The function
+$$
+\ln : (0,\infty) \to \mathbb R
+$$
+is continuous, hence Borel measurable.
+
+Since $f$ is $\mathcal S$-measurable and takes values in $(0,\infty)$,
+the composition
+$$
+\ln \circ f
+$$
+is $\mathcal S$-measurable.
+
+Thus $\ln(f)$ is $\mathcal S$-measurable.
+
+---
+
+**Step 2. Measurability of $g\,\ln(f)$**
+
+The product of two measurable real-valued functions is measurable.
+Since both $g$ and $\ln(f)$ are $\mathcal S$-measurable,
+their product
+$$
+g \,\ln(f)
+$$
+is $\mathcal S$-measurable.
+
+---
+
+**Step 3. Measurability of the exponential**
+
+The exponential function
+$$
+\exp : \mathbb R \to \mathbb R
+$$
+is continuous, hence Borel measurable.
+
+Since $g\,\ln(f)$ is $\mathcal S$-measurable,
+the composition
+$$
+\exp\!\big(g\,\ln(f)\big)
+$$
+is $\mathcal S$-measurable.
+
+---
+
+**Conclusion**
+
+We have
+$$
+f(x)^{g(x)}=\exp\!\big(g(x)\,\ln(f(x))\big),
+$$
+and the right-hand side is $\mathcal S$-measurable.
+
+Therefore $f^g$ is $\mathcal S$-measurable.
+
+$\blacksquare$
+
+:::
+::::
+
+::::{admonition} Exercise 22
+:class: tip
+
+Suppose $B \subset \mathbb R$ and $f : B \to \mathbb R$ an increasing function.  
+Prove that $f$ is continuous at every element of $B$ except for a countable subset of $B$.
+
+:::{dropdown} Solution
+
+Since $f$ is increasing, for all $x<y$ in $B$ we have
+$$
+f(x) \le f(y).
+$$
+
+---
+
+### Step 1. One-sided limits
+
+For $x\in B$, define
+$$
+f(x^-)=\sup\{f(t): t\in B,\ t<x\},
+\qquad
+f(x^+)=\inf\{f(t): t\in B,\ t>x\}.
+$$
+
+Because $f$ is increasing, these quantities exist whenever the corresponding sets are nonempty.
+
+Moreover,
+$$
+f(x^-) \le f(x) \le f(x^+).
+$$
+
+If $f$ is continuous at $x$, then
+$$
+f(x^-)=f(x)=f(x^+).
+$$
+
+If $f$ is discontinuous at $x$, then a strict inequality occurs.
+
+---
+
+### Step 2. The jump intervals
+
+If $x$ is an interior point of $B$ and $f$ is discontinuous at $x$, then
+$$
+f(x^-) < f(x^+),
+$$
+so the open interval
+$$
+\big(f(x^-),f(x^+)\big)
+$$
+is nonempty.
+
+If $x$ is the minimum of $B$, then discontinuity can only occur from the right:
+$$
+f(x) < f(x^+),
+$$
+and the open interval
+$$
+\big(f(x),f(x^+)\big)
+$$
+is nonempty.
+
+If $x$ is the maximum of $B$, then discontinuity can only occur from the left:
+$$
+f(x^-) < f(x),
+$$
+and the open interval
+$$
+\big(f(x^-),f(x)\big)
+$$
+is nonempty.
+
+In every case, a discontinuity at $x$ produces a nonempty open interval.
+
+---
+
+### Step 3. Choosing rationals
+
+Each nonempty open interval contains a rational number.
+Choose one rational number inside the corresponding jump interval for each discontinuity point.
+
+---
+
+### Step 4. Distinct discontinuities give disjoint jump intervals
+
+Let $x_1<x_2$ be two distinct discontinuity points.
+
+Because $f$ is increasing,
+$$
+f(x_1^+) \le f(x_2^-).
+$$
+
+Therefore the jump intervals corresponding to $x_1$ and $x_2$ are disjoint.
+
+Hence the rational chosen for $x_1$ cannot equal the rational chosen for $x_2$.
+
+---
+
+### Step 5. Countability
+
+We have constructed an injective map from the set of discontinuities into $\mathbb Q$.
+
+Since $\mathbb Q$ is countable, the set of discontinuities is countable.
+
+---
+
+### Conclusion
+
+$f$ is continuous at every element of $B$ except for a countable subset of $B$.
+
+$\blacksquare$
+
+:::
+::::
+
